@@ -51,6 +51,7 @@ public class CarPerformanceTest {
     @Test
     @DisplayName("TC1: Validate Base Car Creation")
     void testValidCarCreation() {
+        // Purpose: To confirm a Car object is created with the correct components.
         Car car = new Car(standardEngine, mediumTyres, standardAeroKit);
 
         assertNotNull(car, "Car object should not be null.");
@@ -62,6 +63,8 @@ public class CarPerformanceTest {
     @Test
     @DisplayName("TC2: Verify Top Speed Calculation")
     void testTopSpeedCalculation() {
+        // Purpose: To ensure top speed correctly combines engine and aero effects.
+        // Test Data: Two cars with different speed-focused components.
         Car speedCar = new Car(turboEngine, mediumTyres, lowDragAeroKit);
         Car downforceCar = new Car(standardEngine, mediumTyres, downforceAeroKit);
 
@@ -72,6 +75,8 @@ public class CarPerformanceTest {
     @Test
     @DisplayName("TC3: Verify Fuel Consumption Calculation")
     void testFuelConsumptionCalculation() {
+        // Purpose: To ensure fuel consumption correctly applies modifiers.
+        // Test Data: Two cars with different efficiency-focused components.
         Car efficientCar = new Car(hybridEngine, mediumTyres, lowDragAeroKit);
         Car thirstyCar = new Car(turboEngine, mediumTyres, downforceAeroKit);
 
@@ -82,6 +87,8 @@ public class CarPerformanceTest {
     @Test
     @DisplayName("TC4: Verify Handling Calculation")
     void testHandlingCalculation() {
+        // Purpose: To ensure handling correctly combines tyre and aero effects.
+        // Test Data: Two cars with different grip-focused components.
         Car highGripCar = new Car(standardEngine, softTyres, downforceAeroKit);
         Car lowGripCar = new Car(standardEngine, hardTyres, lowDragAeroKit);
 
@@ -92,6 +99,7 @@ public class CarPerformanceTest {
     @Test
     @DisplayName("TC5: Validate Component Swapping Updates Stats")
     void testComponentSwapping() {
+        // Purpose: To test that car stats update after changing components via setters.
         Car car = new Car(standardEngine, mediumTyres, standardAeroKit);
         double initialSpeed = car.getCalculatedTopSpeed();
 
