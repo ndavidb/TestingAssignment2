@@ -1,6 +1,9 @@
-import javax.swing.SwingUtilities;
+package CarRace;
 
-public class Main {
+
+import javax.swing.*;
+
+public class CarRaceDriver {
     public static void main(String[] args) {
         // Run the GUI on the Event Dispatch Thread (EDT) for thread safety
         SwingUtilities.invokeLater(() -> {

@@ -1,3 +1,5 @@
+package CarRace;
+
 public class StrategyOptimiser {
 
     private static final double TYRE_WEAR_THRESHOLD = 80.0; // Pit when tyres are 80% worn

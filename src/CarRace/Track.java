@@ -1,3 +1,4 @@
+package CarRace;
 public class Track {
     private final String name;
     private final double lengthKm; // Length of one lap

@@ -1,3 +1,4 @@
+package CarRace;
 public class Tyres {
     private final String name;
     private final double wearRate; // Higher is worse

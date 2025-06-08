@@ -1,3 +1,5 @@
+package CarRace;
+
 public class AeroKit {
     private final String name;
     private final double dragCoefficient;

@@ -1,3 +1,4 @@
+package CarRace;
 public class RaceStrategy {
     private final String summary;
     private final boolean isValid;

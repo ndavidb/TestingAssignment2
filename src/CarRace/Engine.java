@@ -1,3 +1,4 @@
+package CarRace;
 public class Engine {
     private final String name;
     private final double speedModifier; // Multiplier for top speed
