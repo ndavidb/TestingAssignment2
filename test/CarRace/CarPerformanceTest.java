@@ -1,9 +1,12 @@
-﻿package CarRace;
+package CarRace;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CarPerformanceTest {
     private Engine standardEngine;
@@ -23,6 +26,7 @@ public class CarPerformanceTest {
 
     @BeforeEach
     void setUp() {
+
         //Purpose: create a common set of components
         List<Engine> engines = CarComponentFactory.getAvailableEngines();
         standardEngine = engines.get(0); // Standard V8 engine
@@ -44,5 +48,25 @@ public class CarPerformanceTest {
         extremeAeroKit = aeroKits.get(4); // Extreme Aero Kit
     }
 
+    @Test
+    @DisplayName("TC1: Validate Base Car Creation")
+    void testValidCarCreation() {
+        Car car = new Car(standardEngine, mediumTyres, standardAeroKit);
+
+        assertNotNull(car, "Car object should not be null.");
+        assertEquals(standardEngine, car.getEngine(), "Engine should be correctly set.");
+        assertEquals(mediumTyres, car.getTyres(), "Tyres should be correctly set.");
+        assertEquals(standardAeroKit, car.getAeroKit(), "AeroKit should be correctly set.");
+    }
+
+    @Test
+    @DisplayName("TC2: Verify Top Speed Calculation")
+    void testTopSpeedCalculation() {
+        Car speedCar = new Car(turboEngine, mediumTyres, lowDragAeroKit);
+        Car downforceCar = new Car(standardEngine, mediumTyres, downforceAeroKit);
+
+        assertTrue(speedCar.getCalculatedTopSpeed() > downforceCar.getCalculatedTopSpeed(),
+                "Speed car's top speed should be greater than the downforce car's.");
+    }
 
 }
