@@ -69,4 +69,23 @@ public class CarPerformanceTest {
                 "Speed car's top speed should be greater than the downforce car's.");
     }
 
+    @Test
+    @DisplayName("TC3: Verify Fuel Consumption Calculation")
+    void testFuelConsumptionCalculation() {
+        Car efficientCar = new Car(hybridEngine, mediumTyres, lowDragAeroKit);
+        Car thirstyCar = new Car(turboEngine, mediumTyres, downforceAeroKit);
+
+        assertTrue(efficientCar.getCalculatedFuelConsumption() < thirstyCar.getCalculatedFuelConsumption(),
+                "Efficient car's fuel consumption should be less than the thirsty car's.");
+    }
+
+    @Test
+    @DisplayName("TC4: Verify Handling Calculation")
+    void testHandlingCalculation() {
+        Car highGripCar = new Car(standardEngine, softTyres, downforceAeroKit);
+        Car lowGripCar = new Car(standardEngine, hardTyres, lowDragAeroKit);
+
+        assertTrue(highGripCar.getCalculatedHandling() > lowGripCar.getCalculatedHandling(),
+                "High-grip car's handling should be greater than the low-grip car's.");
+    }
 }
