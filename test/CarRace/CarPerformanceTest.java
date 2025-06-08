@@ -16,13 +16,13 @@ public class CarPerformanceTest {
     private Tyres mediumTyres;
     private Tyres softTyres;
     private Tyres hardTyres;
-    private Tyres wetTyres;
+    private Tyres wetTyres; // It was defined but not used in tests
 
     private AeroKit standardAeroKit;
     private AeroKit downforceAeroKit;
     private AeroKit lowDragAeroKit;
-    private AeroKit wetWeatherAeroKit;
-    private AeroKit extremeAeroKit;
+    private AeroKit wetWeatherAeroKit;  // It was defined but not used in tests
+    private AeroKit extremeAeroKit;  // It was defined but not used in tests
 
     @BeforeEach
     void setUp() {
@@ -87,5 +87,17 @@ public class CarPerformanceTest {
 
         assertTrue(highGripCar.getCalculatedHandling() > lowGripCar.getCalculatedHandling(),
                 "High-grip car's handling should be greater than the low-grip car's.");
+    }
+
+    @Test
+    @DisplayName("TC5: Validate Component Swapping Updates Stats")
+    void testComponentSwapping() {
+        Car car = new Car(standardEngine, mediumTyres, standardAeroKit);
+        double initialSpeed = car.getCalculatedTopSpeed();
+
+        car.setEngine(turboEngine);
+
+        assertTrue(car.getCalculatedTopSpeed() > initialSpeed,
+                "Top speed should increase after swapping to a better engine.");
     }
 }
