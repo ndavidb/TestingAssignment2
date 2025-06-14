@@ -30,7 +30,7 @@ public class RaceStrategyTest {
     }
 
     @Test
-    @DisplayName("TC6: Short Race on a Power Track (Monza)")
+    @DisplayName("TC_RACE_01: Short Race on a Power Track (Monza)")
     void testShortDryRaceStrategy() {
         // Purpose: To test a scenario where no pit stops are expected.
         // Test Data: 15 laps at Monza, 110L fuel tank, standard car.
@@ -47,7 +47,7 @@ public class RaceStrategyTest {
     }
 
     @Test
-    @DisplayName("TC7: Long Race Forcing Fuel Stops")
+    @DisplayName("TC_RACE_02: Long Race Forcing Fuel Stops")
     void testLongRaceForcesFuelStop() {
         // Purpose: To ensure the strategy correctly identifies the need for fuel stops.
         // Test Data: 70 laps at Monza, high-consumption car.
@@ -64,7 +64,7 @@ public class RaceStrategyTest {
     }
 
     @Test
-    @DisplayName("TC8: Twisty Track Forcing Tyre Wear Stops")
+    @DisplayName("TC_RACE_03: Twisty Track Forcing Tyre Wear Stops")
     void testTwistyTrackForcesTyreWearStop() {
         // Purpose: To ensure the strategy identifies pit stops due to high tyre wear.
         // Test Data: 60 laps at Monaco with soft, high-wear tyres.
@@ -85,7 +85,7 @@ public class RaceStrategyTest {
     class IncompatibilityTests {
 
         @Test
-        @DisplayName("TC9: Correct Tyre Strategy for Wet Weather")
+        @DisplayName("TC_RACE_04: Correct Tyre Strategy for Wet Weather")
         void testWetWeatherWithCorrectTyres() {
             // Purpose: To validate a successful strategy generation in wet conditions.
             // Test Data: Wet race at Spa with Wet Weather Tyres.
@@ -98,7 +98,7 @@ public class RaceStrategyTest {
         }
 
         @Test
-        @DisplayName("TC10: Invalid Tyre Strategy for Wet Weather")
+        @DisplayName("TC_RACE_05: Invalid Tyre Strategy for Wet Weather")
         void testWetWeatherWithIncorrectTyres() {
             // Purpose: To test the incompatibility check for using dry tyres in rain.
             // Test Data: Wet race with Dry (Medium) tyres.
@@ -112,7 +112,7 @@ public class RaceStrategyTest {
         }
 
         @Test
-        @DisplayName("TC11: Invalid Tyre Strategy for Dry Weather")
+        @DisplayName("TC_RACE_07: Invalid Tyre Strategy for Dry Weather")
         void testDryWeatherWithIncorrectTyres() {
             // Purpose: To test the incompatibility check for using wet tyres in the dry.
             // Test Data: Dry race with Wet tyres.
@@ -127,7 +127,7 @@ public class RaceStrategyTest {
     }
 
     @Test
-    @DisplayName("TC12: Strategy Consistency Check")
+    @DisplayName("TC_RACE_08: Strategy Consistency Check")
     void testStrategyIsDeterministic() {
         // Purpose: To ensure the simulation produces identical, consistent results.
         // Test Data: The setup from TC7, run twice.

@@ -49,7 +49,7 @@ public class CarPerformanceTest {
     }
 
     @Test
-    @DisplayName("TC1: Validate Base Car Creation")
+    @DisplayName("TC_CAR_1: Validate Base Car Creation")
     void testValidCarCreation() {
         // Purpose: To confirm a Car object is created with the correct components.
         Car car = new Car(standardEngine, mediumTyres, standardAeroKit);
@@ -61,7 +61,7 @@ public class CarPerformanceTest {
     }
 
     @Test
-    @DisplayName("TC2: Verify Top Speed Calculation")
+    @DisplayName("TC_CAR_2: Verify Top Speed Calculation")
     void testTopSpeedCalculation() {
         // Purpose: To ensure top speed correctly combines engine and aero effects.
         // Test Data: Two cars with different speed-focused components.
@@ -73,7 +73,7 @@ public class CarPerformanceTest {
     }
 
     @Test
-    @DisplayName("TC3: Verify Fuel Consumption Calculation")
+    @DisplayName("TC_CAR_3: Verify Fuel Consumption Calculation")
     void testFuelConsumptionCalculation() {
         // Purpose: To ensure fuel consumption correctly applies modifiers.
         // Test Data: Two cars with different efficiency-focused components.
@@ -85,7 +85,7 @@ public class CarPerformanceTest {
     }
 
     @Test
-    @DisplayName("TC4: Verify Handling Calculation")
+    @DisplayName("TC_CAR_4: Verify Handling Calculation")
     void testHandlingCalculation() {
         // Purpose: To ensure handling correctly combines tyre and aero effects.
         // Test Data: Two cars with different grip-focused components.
@@ -97,7 +97,7 @@ public class CarPerformanceTest {
     }
 
     @Test
-    @DisplayName("TC5: Validate Component Swapping Updates Stats")
+    @DisplayName("TC_CAR_5: Validate Component Swapping Updates Stats")
     void testComponentSwapping() {
         // Purpose: To test that car stats update after changing components via setters.
         Car car = new Car(standardEngine, mediumTyres, standardAeroKit);
